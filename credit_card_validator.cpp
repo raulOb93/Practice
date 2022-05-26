@@ -25,34 +25,34 @@ int main(){
 std::string cc_type(int length, int number){
     std::string type;
     
-       string cc_type = "INVALID"; /*Setting Invalid as default output, if value doesnt change
+       std::string cc_type = "INVALID"; /*Setting Invalid as default output, if value doesnt change
     it will return Invalid as no conditions were covered*/
-    if (length >= 13 && length <= 16) //validate is not smaller or larger than expected
+    if (credit_card_length >= 13 && credit_card_length <= 16) //validate is not smaller or larger than expected
     {
-        int first_digits = card_number / pow(10, (length - 2)); //obtaining digit of type and verification
+        int first_digits = credit_card_number / pow(10, (length - 2)); //obtaining digit of type and verification
         //AMEX
         if (length == 15) //Amex validation based on length
         {
             if (first_digits == 34 || first_digits == 37)  //Amex validation based on first 2 digits
             {
-                cc_type = "AMEX";
+                type = "AMEX";
             }
         }
         else if (length == 16)
         {
             if (first_digits >= 51 && first_digits <= 55)// Mastercad validation
             {
-                cc_type = "MASTERCARD";
+                type = "MASTERCARD";
             }
 
             else if (first_digits >= 40 && first_digits <= 49) //VISA validation with 16 digits
             {
-                cc_type = "VISA";
+                type = "VISA";
             }
         }
         else if (length == 13 && first_digits >= 40 && first_digits <= 49) //VISA validation with 13 digits
         {
-            cc_type = "VISA";
+                type = "VISA";
         }
     }
     
