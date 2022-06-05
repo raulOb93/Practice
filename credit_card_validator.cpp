@@ -65,7 +65,7 @@ string card_type(int length,long int number)
     string type = "INVALID"; //Setting Invalid as default output, if value doesnt change it will return Invalid as no conditions were covered
     int first_digits = number / pow(10, (length - 2)); //obtaining digit of type
 
-        if (length == 16) //Obtaining type
+        if (length == 16) //Obtaining type 
         {
             if (first_digits >= 51 && first_digits <= 55) // Mastercad validation
             {
@@ -82,7 +82,7 @@ string card_type(int length,long int number)
         }
         else if (length == 15) // Amex validation based on length
         {
-            if (first_digits == 34 || first_digits == 37) // Amex validation based on first 2 digits
+            if (first_digits == 34 || first_digits == 37)
             {
                 type = "AMEX";
             }
